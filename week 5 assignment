@@ -1,0 +1,34 @@
+﻿grades={"80 and above":"A","70-79":"B","60-69":"C","50-59":"D","0-40":"E","anything else":"F"}
+
+{80 and above: "A", 70-79: "B", 60-69: "C", 50-59: "D", 0-40: "E", …}
+var marks=84;
+
+undefined
+
+function getGrade () {
+
+switch (grades) {
+ 
+   case marks:
+    
+    console.log("84");
+ 
+       break;
+ 
+   case grades:
+      
+  console.log("A");
+ 
+       break;
+   
+ default:
+    
+    console.log("84,A");
+}
+}
+
+undefined
+getGrade(84);
+ A
+ 
+undefined
