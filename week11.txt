@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Greens Kiosk</title>
+</head>
+<body>
+  <h1 id="title">Welcome to Greens Kiosk</h1>
+  <p>We sell fruits and vegetables</p>
+  <h3>Fruits</h3>
+  <ul id="fruList">
+    <li>Mangoes</li>
+    <li>Bananas</li>
+    <li>Water Melons</li>
+  </ul>
+  <h3>Vegetables</h3>
+  <ul id="vegList">
+    <li>Onions</li>
+    <li>Tomatoes</li>
+    <li>Kales</li>
+  </ul>
+</body>
+</html>
+
+
+Questions: 
+Change document background color to silver 
+Change the font color for h1 title tag to green
+Change the font case for h3 title tags to uppercase
+Add one more fruit to the fruits list
+Add one more vegetable to the vegetables list
+ 
+
+
+ANSWERS
+
+var body =document.body
+body.style.backgroundColor="silver"
+
+var h1 = document.getElementById("title")
+h1.style.color="Green"
+
+var li =document.createElement("li")
+li.innerHTML="guavas"
+var matunda=document.createElement("fruList")
+fruList.appendChild(li)
+
+var li =document.createElement("li")
+li.innerHTML="mchicha"
+var mboga=document.createElement("vegList")
+vegList.appendChild(li)
+
+var H3 = "Vegetables";
+H3.toUpperCase();
+
+
+var H3 = "Fruits";
+H3.toUpperCase();
+
+
+
+ASYNC AND AWAIT
+
+What is Async/Await?
+Async/Await is a long anticipated javascript feature that makes working with asynchronous functions much more enjoyable and easier to understand. It is build on top of Promises and is compatible with all existing Promise-based APIs
+The two  keywords will help us clean up our asynchronous code.
+•	The newest way to write asynchronous code in JavaScript.
+•	It is non blocking (just like promises and callbacks).
+•	Async/Await was created to simplify the process of working with and writing chained promises.
+•	Async functions return a Promise. If the function throws an error, the Promise will be rejected. If the function returns a value, the Promise will be resolved.
+.
+
+WRITING AN ASYNC FUNCTION YOU NEED TO ADD THE ASYNC KEYWORD PRIOR TO FUNCTION.
+Example:
+Example of Async Function
+
+// Normal Function
+function add(x,y){
+  return x + y;
+}
+// Async Function
+async function add(x,y){
+  return x + y;
+}
+
+
+1.	Await-pauses the execution of async functions.
+2.	When placed in front of a promise call,awit forces the rest of the code to wait  until that promise finishes and returns the result.
+3.	Await works only with promises, it does not work with callbacks .
+4.	Await can only be used in async function.
+ASYNC DECLARES AN ASYNCHRONOUS  FUNCTION
+Automatically transforms  a regular function into a promise .
+When called  async functions resolves with whatever is called in their  body.
+Async function enables the  use of  await.
+
+
+I have understood I need   to understand Promises for me to understand Async and Await.
+A promise is a more sophisticated solution to the async problems in JS. The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value. A promise is always in one of 3 states:
+•	pending: initial state, neither fulfilled nor rejected.
+•	fulfilled: meaning that the operation completed successfully.
+•	rejected: meaning that the operation failed.
+
+FUNCTION IMPLEMENTED USING ASYNC/AWAIT.
+
+The async keyword will automatically create a new Promise and return it.
+Async function getjsonasync(){
+
+// The await keyword saves us from having to write a .then() block.
+Let json = await axios.get('https://tutorialzine.com/misc/files/example.json');
+
+// The result of the GET request is available in the json variable.
+// We return it just like in a regular synchronous function.
+Return json;
+}
+
+It's pretty clear that the Async/Await version of the code is much shorter and easier to read. Other than the syntax used, both functions are completely identical - they both return Promises and resolve with the JSON response from axios.
+
+We can call async function
+Getjsonasync().then( function(result) {
+// Do something with result.
+});
+
+
+SO, DOES ASYNC/AWAIT MAKE PROMISES OBSOLETE?
+No, not at all. When working with Async/Await we are still using Promises under the hood. A good understanding of Promises will actually help you in the long run and is highly recommended.
+There are even use cases where Async/Await doesn't cut it and we have to go back to Promises for help. One such scenario is when we need to make multiple independent asynchronous calls and wait for all of them to finish
+
+HANDLING ERRORS IN ASYNC/AWAIT
+Another great thing about Async/Await is that it allows us to catch any unexpected errors in a good old try/catch block. We just need to wrap our await calls like this:
+Async function dosomethingasync(){
+Try {
+// This async call may fail.
+Let result = await someasynccall();
+}
+Catch(error) {
+// If it does we will catch the error here.
+}
+}
+
+
+Example:
+
+function doubleAfter2Seconds(x) {
+	  return new Promise(resolve => {
+	    setTimeout(() => {
+	      resolve(x * 2);
+	    }, 2000);
+	  });
+	}	
+	
+
+	async function addAsync(x) {
+	  const a = await doubleAfter2Seconds(10);
+	  const b = await doubleAfter2Seconds(20);
+	  const c = await doubleAfter2Seconds(30);
+	  return x + a + b + c;
+	}
+
+CONCLUSION
+With the addition of Async/Await the JavaScript language takes a huge leap forward in terms of code readability and ease of use. The ability to write asynchronous code that resembles regular synchronous functions will be appreciated by both beginners to JavaScript and veteran coders.
+
+
